@@ -1,0 +1,818 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx}
+\usepackage{verbatim}
+\usepackage{cite}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Review of Resource Management in Service Oriented Computing; a Meta-Operating System for the Grid \\
+\small{(Topic: T5.	Security and reliability and availability consideration in service-oriented software development)}}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Jovan Trujillo}
+\IEEEauthorblockA{School of Computer Science and Engineering \\ 
+Arizona State University\\
+Tempe, Arizona 85281\\
+Email: jovan.trujillo@asu.edu}}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\textbfmath
+%\blindtext[1]
+This paper reviews the need for a Grid operating system for managing the large heterogeneous grid systems that are within the Internet. The characteristics of a Grid network used for service oriented computing is described in this review. It also explains why a Grid operating system is needed to manage a Grid network of services. And finally it reviews some of the solutions that have been developed in research and how these results are being applied today and in the future. 
+\end{abstract}
+% IEEEtran.cls defaults to using nontextbf math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors textbf math in the abstract,
+% then you can use LaTeX's standard command \textbfmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Grid OS, Grid operating system, cloud computing, grid service manager, computational economy.
+\end{IEEEkeywords}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\section{\textbf{Introduction}}
+Resource management and scheduling in a large service oriented computing network can be a complex problem. This is because resources are geographically distributed, heterogeneous, owned by different individuals and organizations, enforce different policies, have various access protocols, run different software stacks, and have dynamically varying loads and availability.\cite{economygrid} A grid computing operating system is needed in order to manage these resources into a coherent ``virtual machine'' to serve as a consistent interface for application development. 
+
+%Systems addressing these problems have been developed and are called Grid Resource Brokers (GRB). One such system is called Nimrod/G.
+
+Grid computing services need middle-ware to manage application scheduling and resource allocation. A grid computing operating system also needs to account for partial system failure within the network. Therefore software scheduling and resource allocation needs to be distributed across the network. Any node would need to be able to support the role of the Grid operating system. 
+
+This paper provides a survey of what a Grid operating system consists of. It also describes implementations of Grid operating systems developed for research. Finally it describes what the current focus in Grid operating research is and speculates on what future implementations of such a system will consist of.  
+
+% Resource selection services are needed to assign Grid resources to application needs.  
+
+The main components of Grid computing are:
+\begin{itemize}
+\item Hardware resources.
+\item Software services.
+\item Service interfaces.
+\item Service directories.
+\item Mapping application needs to Grid resources 
+\item Service fault tolerance.
+\item Application scheduling across the Grid.
+\end{itemize}
+
+Hardware resources include desktops, workstations, clusters, storage, instrumentation, and network infrastructure. The hardware resources are distributed across a wide geographic area. The available hardware can be a heterogeneous aggregation of processor speeds, memory capacities, storage capacities, and network latencies. The local operating systems running on these systems can also be different. The available software services will inherently be different based on the capabilities of the underlying system. In order to combine these resources into a single virtual machine an abstraction layer is needed for software development. In conjunction with this abstraction layer a resource manager is needed to act as a meta-operating system for the virtual machine. Such an operating system would need to manage the multitude of applications that will request access to the Grid. The system would have to manage which services are allowed for an application and ensure that two applications do not conflict in their resource allocations. A Grid OS would need to implement a distributed file system to consolidate all of the storage devices available into one single virtual storage interface for the client. Security and user authentication must also be taken into account in order to limit which resources the clients have access to.  
+
+Software services provided by a grid network can be developed by a wide variety of software tools. Services can be created using Windows Communication Foundation (WCF) and the .NET framework. RESTful web services can be created using a wide variety of programming languages and operating systems. Communication between a client and a service can use the REST/HTTP protocol, WSDL/SOAP protocol, or some custom protocol. \cite{cse598book} A Grid operating system needs to be able to accommodate all of these types of services for a client. This leads to a need for a uniform interface between a grid's heterogeneous services and a client's application. 
+
+Service interfaces to the client application also need to be standardized to simplify program development for a grid system. Software services provided by the Grid would need some standardized application programming interface in order to be managed by the meta-operating system. Abstraction helps to provide the illusion of a single virtual machine interface to the grid system. A good example of such an interface is the web browser, which provides an interface using HTML, CSS, and JavaScript standards. Through the modern web browser clients can interface with a multitude of databases, create documents using word processing tools, develop software using virtual machine instances, and manage a cluster of computers for whatever task they need. All of these tasks are now being accomplished through a web browser to access various web services on the network known as the Cloud. 
+
+The services available from the grid at any given moment need to be located by a directory service, which identifies the capabilities of the service, it's address within the grid, and whether it is currently available. The Grid operating system would interface with this information to aid with connecting services to authorized applications. A service directory does not necessarily need to be embedded within the Grid OS, but may instead be yet another middle-ware service that the Grid OS uses to perform it's functions.  
+
+The Grid operating system will map applications to requested services. In this process the Grid OS must authenticate the user to use the application and resources, it must also locate the resources requested, and finally it must check whether the resources are available. Other tasks may include calculating the number of resources allowed to be allocated to the application. This can be based on computational need and cost. Finally is a service is unavailable due to a fault in the system then the Grid OS must be able to recover to continue to run the application. 
+
+Fault tolerance is an important function of a Grid OS. There will be cases when resources become unavailable during use. When such a case occurs the system should link the application to a new resource address automatically. Data may also need to be restored using a backup service. Fault tolerance is something that needs to be integrated into the Grid operating system, and may need to be distributed across the Grid in case the node hosting the operating system fails.  
+
+Application scheduling is needed to maintain acceptable loads across a Grid network. Scheduling is also needed to prevent resource conflicts between applications and services accessing the same data. Several research systems have been developed for grid scheduling. These include NetSolve, DISCWorld, AppLeS, and REXEC. \cite{nimrod} Today the largest grid services are sold by companies involved in Cloud computing. The thousands of computing nodes available through Microsoft, Google, Amazon, etc. are the raw materials for creating a distributed virtual machine. They are also the companies that are already implementing many of the ideas developed in Grid operating system research.  
+
+\section{\textbf{The need for Grid management}}
+The most popular application of grid computing today is the Cloud computing paradigm. There are dozens of definitions of what Cloud computing is, but this paper will use the definition provided by Foster et al., ``A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of abstracted, virtualized, dynamically-scalable, managed computing power, storage, platform, and services are delivered on demand to external customers over the Internet.''. \cite{cloudgridcompute} The implementation of Cloud computing today is actually based on a 19 year old Grid computing paradigm utilizing utility computing, cluster computing, and distributed systems research. Therefore to understand the needs of Cloud computing today work done on Grid computing over the last two decades can be reviewed. 
+
+Grid computing can be considered an improvement to distributed computing concepts. The goal in Grid computing is to create a single virtual computer out of a collection of computing nodes. The user does not have to interact with the nodes separately, and the file system is aggregated into a single virtual file system interface. \cite{globus} To achieve this a wide variety of geographically distributed computational resources need to be combined into a single managed interface. PCs, workstations, clusters, storage systems, data sources, databases, computational kernels, and special purpose scientific instruments need to be combined into a unified integrated resource. These resources are also governed by different policies for user access. Therefore security systems need to be consolidated into a single managed network. The complexity of resource management and scheduling for such a wide range of systems needs to be hidden as well. This can be done with a Grid Resource Broker (GRB). Users of a global Grid environment interact with a GRB as their main interface to the system. Another important service is the Grid Information Services (GIS), which the GRB uses to discover which resources are available to the client. The GIS negotiates with all grid-enabled resources either directly or through an agent to determine service costs, resource selection, mapping and scheduling tasks to resources, staging the application and data for processing on remote nodes, and finally gathering the results for the client. The GIS also monitors application execution for cases when the Grid environment changes or fails. \cite{economygrid} 
+
+The current research into Grid management is motivated by the assumption that coordinated access to a heterogeneous network of services is valuable. That is why there is a need for Grid management software in the form of a meta-operating system for the Grid. A brief listing of some of the Grid systems that have been developed is presented in this paper and then goes into the tool kits that have been created to build such systems. 
+
+Some large scale Grid systems produced by this research were TeraGrid (which operated from 2004 to 2011), Open Science Grid (2004 to present), caBIG (2004 to 2012), EGEE (2004 to 2010), and Earth System Grid (2001 to present). The standards organizations which defined the standards for these systems included OGF (Open Grid Forum) and OASIS (Organization for the Advancement of Structured Information Standards). Many of these systems used the Globus toolkit developed by the Globus Alliance. 
+
+\section{\textbf{Grid management tool kits}}
+There are many toolkits that have been developed for managing grid computer networks. This paper will only survey a few which specifically feature some aspect of operating system functionality. One toolkit mentioned in many of the papers referenced is the Globus toolkit, unpon which many other research systems have been built upon. 
+
+\subsection{\textbf{Globus toolkit}}
+The Globus toolkit is an open source toolkit for Grid computing. It has been used in many research projects for the development of a meta-operating system which can manage service access and application scheduling across a network of computing nodes. \cite{globus} The toolkit provides software for security, information infrastructure, resource management, data management, communication, fault detection, and portability. \cite{globustoolkit} It allows people to share computing power, databases, and other tools over a secure wide-area network. The toolkit also includes software for resource monitoring, discovery, management, security, and file management.  
+
+\subsection{\textbf{Nimrod toolkit}}
+The Nimrod toolkit is a parametric modeling system used to execute simulations across a range of parameters over several computing nodes. It also contains a distributed computing scheduler which provides load balancing when running a simulation on a grid network. \cite{nimrodweb} The system was also an early example of using an economic model for grid scheduling, which enabled guaranteed completion times for simulations. \cite{nimrod} The system actually consists of 5 tools:
+
+\begin{itemize}
+\item Nimrod/G - provides two services: Parameter sweeps and grid/cloud execution tools including scheduling across multiple compute resources. A commercial version of Nimrod, called EnFuzion, is available for clusters from Axceleon.
+\item Nimrod/O - provides an optimization framework for optimizing a target output value of an application. Used with Nimrod/G, it can exploit parallelism in the search algorithm. 
+\item Nimrod/OI - provides an interactive interface for Nimrod/O. In some applications, it might require someone to decide which output is better. Those results are fed back into Nimrod/O to produce more suggestions. 
+\item Nimrod/E - provides experimental design techniques for analyzing parameter effects on an application's output. Used with Nimrod/G allows the experiment to be scaled up on grid and cloud resources.
+\item Nimrod/K - provides all th Nimrod tools in a work flow engine called Kepler. Nimrod/K adds all the parameter tools and grid/cloud services to Kepler while leveraging and enhancing all the existing grid tools already provided by adding dynamic parallelism in work flows. 
+\end{itemize}
+
+Some of the basic work flows that Nimrod supports allows a user to vary parameters for a simulation across a grid network, execute simulations, and copy the results in and out of the network. Some of the other features of the Nimrod toolkit include:
+\begin{itemize}
+\item managing sequential and parallel service dependencies
+\item parallel parameter sweeps, optimizations, and experimental designs
+\item using a computational economy algorithm to drive scheduling
+\item uses a middleware broker for discovering resource availability
+\item now provides an interface for cloud computing
+\end{itemize}
+
+The future work on Nimrod/G focuses on applying economic theories to Grid resource management and scheduling. The components that make up current research based on the ideaa from Nimrod/G is called GRACE. GRACE stands for Grid Architecture for Computational Economy, and is composed of a global scheduler/broker, bid-manager, directory server, and bid-server working closely with other grid middle-ware systems. The GRACE infrastructure also offers generic interfacces (APIs) that the grid tools and applications programmers can use to develop software supporting the computational economy.
+
+\subsection{\textbf{Other computational grid schedulers}}
+There are many other Grid scheduling programs mentioned in literature. These include AppLeS (Application Level Scheduling), NetSolve (client-agent-server model), DISCWorld (client-server-server model), REXEC, and Libra. \cite{nimrod} REXEC and Libra are two other schedulers that have employed the concept of computational economy that Nimrod utilizes. The other schedulers were described in Buyya et al.'s paper as a contrast to the Nimrod system. 
+
+The AppLeS scheduler creates agents for each application deployed on a Grid. It is responsible for offering a scheduling mechanism on a case-by-case basis. The AppLeS scheduler use the Netowrk Weather Service (NWS) to monitor the resource/network load. Through this setup it is able to select a viable configuration for the application. In contrast Nimrod/G does not require that scheduling agents be built into the applications. 
+
+NetSolve is a client-agent-server system that was created to manage scientific modeling and simulation applications on the Grid. It schedules resources by selecting the best performing nodes for the application at any given time. Applications need to be build using the NetSolve API, similar to how the AppLeS scheduler is utilized. 
+
+DISCWorld stands for Distributed Information Systems Control World. It is a service-oriented meta-computing system based on the client-server-server model. Remote users log into this environment over the Internet to request data and perform operations on that data on the Grid. It is primarily focused on retrieving information and does not offer any client sponsored application development support. Nimrod/G allows the user to create programs that run on the Grid and well as retrieve the data created by those programs. 
+
+REXEC is a remote execution environment for campus-wide networks of workstations. It was part of the Berkeley Millenium project and provided a command line interface. The system charged the user for CPU time by the minute, and the user would specify the maximum rate allowed. The REXEC client selects the node that fits the user requirements and executes the application on it. All work is done through a REXEC shell which can execute remote applications on clusters. It is up to the user to develop applications that fully utilize the cluster they have paid for, perhaps using the message passing interface (MPI) or parallel virtual machine (PVM) libraries for parallel processing. 
+
+\section{\textbf{The focus on computational economy in resource management}}
+
+The Cloud infrastructures that are being commercialized today certainly factor cost into their resource managers. The cost of running an application on the Cloud can directly determine the number of resources allocated for that application. The cost may also allow some applications to have priority over others on the Cloud. In this paper the notion of monetary cost to computational cost is extended and shows how it can be used for Grid resource management. 
+
+Any system involving goals, resources, and actions can be viewed in economic terms. \cite{economygrid} The economics of trade and price mechanisms can be translated into trading and pricing Grid services. The models for these mechanisms can then be used on a local Grid node to guide resource management decisions that affect the entire Grid. Such a model could theoretically be used to maximize Grid utilization. 
+
+The two main components of an economic computational Grid are Grid Service Providers (GSPs) and Grid Resource Brokers (GRBs). The GSPs are the producers and the GRBs are the consumers in this model. In a Grid economy the GRBs have the goal of solving their problems with the lowest execution time and with the minimum number of resources. The GSPs have the goal of achieving the best possible return on their investment. This means that GSPs aim to maximize the utilization of the grid given a set of clients. The main component of this model is that producers and consumers need a method to express their needs to the whole Grid. It is through this declaration of need that Grid consumers can find the best services for optimizing their application. And Grid producers can shuffle service allocation around to optimize Grid utilization. Consumers interact with the Grid Resource Broker to find services based on the time budget they set for completing the task. There may also be a monetary budget that factors into their resource utilization. This is certainly a factor in modern Cloud computing where basic services are free but grow in price as the application scales up. 
+
+The Grid Service Providers need a method to express their pricing policies and mechanisms to help them maximize profit and resource utilization. Numerous economic models ranging from commodity market to auction-based need to be accommodated in order to adapt the Grid for different resource trading schemes. One can see that monetary economics become closely coupled with resource economics in this model of computation. It is this approach to resource management that is currently being implemented in commercial Cloud computing. Such a system does not apply to private Grid networks that are motivated by public service, prizes, fun, fame, or collaborative advantage. Grids created from volunteer resources or research projects can not fully utilize the advantages of a computational economy model. An example is SETI@Home, which is a volunteer grid network that provides no incentive to increase the utilization of a node and therefore is not a fully optimized Grid network. There needs to be an economic factor in order to motivate Grid users to optimize their processes. 
+
+Some of the economic models that have been implemented into a Grid economic model include:
+\begin{itemize}
+\item A posted price model
+\item A commodity market model (flat or demand \& supply driven pricing)
+\item A bargaining model
+\item A tendering/contract-net model
+\item An autction model
+\item A bid-based proportional resource sharing model
+\item A community/coalition/bartering model
+\end{itemize}
+
+From this list one can see that there is still plenty of research that can be done in optimizing Grid economies. In the commodity market model, for example, one can simulate the effect of resource providers competing by dynamically changing the price of their services. Consumers then have to simulate a cost/benefit analysis in choosing their services, resulting in changes to how the Grid is utilized. 
+
+The posted price model s similar to the commodity market model except that resource prices are posted long before they are scheduled to the client. In the bargaining model providers and consumers do not influence the price for service access. Instead the negotiation happens privately between a single consumer and producer. There is no knowledge regarding how other clients value the same resource services being offered. Therefore a private objective function is what decides whether a client will accept a service for their application. 
+
+In the Tendering/Contract-net model the consumer asks for bids from several producers and selects the service which generates the lowest cost while still meeting their deadline and budget requirements. The auction model is the reverse of the tendering/contract-net model. In the auction model producers ask for bids from the consumers. Services are provided to the highest bidding client. The bid-based proportional resource sharing model allocates resources to consumers directly proportional to the value of their bids. Finally in the community/coalition/bartering model a group of clients buy resources from a Grid network and share those resources among themselves. Such a scheme can also foster a situation where clients are both service providers and consumers within a Grid network. 
+
+The economic approach to Grid computing comes with its own set of challenges that need to be addressed. The Grid tool kits described previously in this paper take care of five resource management problems for Grid computing. These are site autonomy across different network policies, consolidating a heterogeneous network of nodes, adapting local policies to the global policy of the Grid network, resource allocation, and client control of the Grid system. The computational economy aspect of Grid resource management solves the sixth problem of client/resource optimization within the Grid. 
+
+The GRACE tool kit that has developed from the Nimrod project adds another abstraction layer to the wide range of tool kits described previously in this paper. GRACE is designed to reuse the services developed by Globus, Legion, Condor/G, QBank, NetCash, etc. and adds the economic factor to their resource management scheme. \cite{grace} It provides the following new services to the previous tool kits mentioned:
+
+\begin{itemize}
+\item An information and market directory for publicizing Grid entities
+\item Models for establishing the value of resources
+\item Resource pricing schemes and publishing mechanisms
+\item Economic models and negotiation protocols
+\item Mediators to act as a regulatory agency for establishing resource value, currency standards, and crisis handling.
+\item Accounting, Billing, and Payment Mechanisms
+\end{itemize}
+
+Many of these services are now provided by Cloud networks through your standard web browser. But each company will implement these services differently, and therefore this research may be used to further consolidate Cloud services from different companies into a single Grid resource toolkit which minimizes the cost to the client, and continues to match the best services to their needs. 
+
+\section{\textbf{Grid management security using XtreemOS}}
+XtreemOS is a Linux based operating system that creates virtual organizations within a Grid computing network. It provides a platform that all of the other Grid resource management solutions can be implemented in. The XtreemOS operating system is used as a model for virtual organization management. A virtual organization is a set of users and real organizations that collectively provide resources for a common goal. In grid computing, physical machines, services, applications, and data sets are all resources that need to be consolidated and shared by a group of clients. A virtual organization can help facilitate collaboration among clients when using Grid resources. \cite{xtreemos} 
+
+The focus of XtreemOS depends on its application. Much has been written on how XtreemOS handles the legal and contractual agreements among clients using a Grid system. The system then determines what access rights and privileges the virtual organization has to the resources provided by the Grid network. The policies XtreemOS enforces must be dynamic and can range in application from long-lived collaborations in large-scale scientific research to short-lived, dynamic ventures in commercial applications. All scenarios are sharing the same Grid resources in this example, and XtreemOS provides the policy juggling and security enhancements to prevent one group from utilizing services from another group. 
+
+As is the case with other resource management solutions described in this paper XtreemOS must be able to cooperate with existing solutions and traditional system security mechanisms already in existence in the heterogeneous Grid networks of the Internet. Some of the key features of XtreemOS in the realm of security are:
+
+\begin{itemize}
+\item Customizable isolation, access control, and auditing of one client group from another. 
+\item Scalability of dynamic virtual organization management
+\item Ease of use and management
+\item Single sign-on authorization for the client
+\item Independence of user and resource management
+\item Dynamic mapping between virtual organizations and Unix nodes
+\item Minimal changes to the Linux kernel
+\end{itemize}
+
+Within XtreemOS is the virtual organization manager, which provides the following five security services:
+
+\begin{itemize}
+\item client identity
+\item client attributes
+\item client credentials
+\item client memberships
+\item client policy
+\end{itemize}
+
+The XtreemOS client identity service generates and manages globally unique virtual organization identification and user identification. The system's architecture assumes that resources trust the virtual organization manager, which is down by requireing all nodes to install the virtual organization manager's root CA certificates. 
+
+The client attributes service provides users with virtual organization attributes which let Grid services check again virtual organization policies during resource selection, access control, and file systems. XtreemOS enforces system level resource usage control and lets nodes map global identification numbers to system user identification and global organization identification. 
+
+The credential service is a credential distribution authority which issues users of a virtual organization access rights to grid-wide services and resources. The membership service validates the memberships of users who initiate a grid request. The client policy service provides policy-related services, such as policy information and decision points, to virtual organization managers so that resource accesss control is enforced by the nodes and the virtual organization manager. 
+
+There have been other systems developed for virtual organization management. One such system was called Legion, which used an object-based programming model to create a single virtual machine interface to a heterogeneous Grid network. In contrast XtreemOS does not try to cover the structure of a heterogeneous network. This allows users to convert existing applications to grid enabled solutions with a minimal amount of code changes. 
+
+To utilize this system each node within the Grid network must run a local instance of XtreemOS. That means that security, resource limitations, scheduling priorities, and resource sharing rules need local instances of XtreemOS across the entire Grid network in order to function correctly. This can pose a problem if an existing Grid network has implemented an incompatible version of Linux, or some other operating system entirely. The research involved in XtreemOS may need to be abstracted into more portable services and middle-ware applications in order to be practical in existing Cloud systems. Fortunately much of the work on XtreemOS consists of libraries written in C, which may be ported to other systems if necessary. The system developed uses some common Linux features, including Pluggable Authentication Modules (PAM), Name Service Switch (NS-Switch), and Kernel Key Retention Service (KKRS). These services have already been ported to other Unix systems like Mac OS X, and could even be ported to Windows operating systems using a virtual machine or some thin abstraction layer. XtreemOS takes advantage of all access-control mechanism provided by a standard Linux system. 
+
+
+\section{\textbf{Regarding grid failure and recovery}}
+This paper has covered Grid resource allocation tool kits such as GRACE, consolidation tool kits like Globus, and security took kits like XtreemOS. In this section the focus is on the importance of fault-tolerance in Grid service scheduling. Grid infrastructures such as Legion and Globus have simplified access and usage of grid computing, allowing it to be useful to a wider range of clients. Globus provides the basic infrastructure with capabilities and interfaces for communications, resource location, and data access. But the resource allocation decisions must be made by another system, Globus does not provide a solution for this aspect. The same is true with GRACE and XtreemOS. 
+
+Fault tolerance needs to be build into the scheduling policy of a Grid management system. The work done by Abawajy addresses this need with the development of a Distributed Fault-Tolerant Scheduling (DTFS) policy. \cite{faulttolerant} This policy is classified as an on-line scheduling policy and is characterized by four characteristics:
+
+\begin{itemize}
+\item the service time of the jobs or tasks is unknown
+\item the job arrival times are unknown
+\item the number of processors each task requires is unknown until the task is executed
+\item the number of processors available for scheduling a task is unknown 
+\end{itemize}
+
+To handle faults in such an environment a replication strategy is implemented. Each scheduled task is simultaneously replicated somewhere else within the Grid network to achieve fault-tolerance. A peer-to-peer strategy between replicated tasks is used to detect and recover from a node failure. This solution assumes that Grid services are typically underutilized and therefore allowing this level of redundancy helps maximize Grid utilization. 
+
+The peer-to-peer message passing that must be wrapped around every task submitted to the Grid is most likely integrated into the application development process. Several algorithms were implemented in Abawajy's work to account for where a replicate task should be created within a Grid network, and how to prevent race conditions when a task and its replicate complete at the same time. There is also the possibility of integrating a cost-based resource selection, where customer's who require extra reliability may choose to run tasks with more than one replicate. There is also the possibility of running services simultaneously on several geographically isolated Grid networks to further enhance faul-tolerance. 
+
+There is much more detail that can be discussed on implementing this solution into existing Grid resource management tools, but due to limitations on the size of this paper the review will stop here. The modern Cloud infrastructure available to customers has already implemented their own solutions to the fault-tolerance problem by providing virtual machines to customers and providing image backups when something goes wrong. This is not the same as the near instantaneous recovery of system failure described in this paper but could be implemented by the customer within their own resource allocation. 
+
+\section{\textbf{Conclusion}}
+In conclusion this paper has reviewed the need for Grid resource management to serve as a meta-operating system for Grid networks. This work also reviews systems that have been implemented to address the needs of Grid resource management. The implementations show how modern Cloud resources on the Internet have applied their research. The modern use of the Cloud infrastructure as a commercial Grid network has shown the need for resource management using a Grid toolkit like Globus or Nimrod. Cloud security is also needed and has been implemented using the security features found in Linux and developed in the XtreemOS project. The grid economy models described in this paper have also been implemented into the commercialization of Cloud services. Companies like Microsoft, Amazon, Google, and DigitalOcean have distinctive pricing models to help set them apart from the competition, and which help clients decide which services are really needed for their application and at what scale. The need for rapid fault recovery in Grid applications has yet to be a standard feature of the Cloud infrastructure, but the flexibility of the Cloud allows for clients to develop their own fault-tolerant policies within their applications. In essence all of the main features of a global meta-operating system are either already implemented in the Cloud are ready to be implemented in the Cloud by the client. One feature of the Grid resource manager that has not been discussed is the uniformity of the interface to resource manager services, and the uniformity of application development when deployed to a heterogeneous network. On this topic it may prove beneficial to study the use of the web browser to serve all of our management and development needs. Web applications to serve some of these needs have already been implemented by companies like Amazon for resource management and Koding for software development through the web browser. These tools certainly have room for improvement, especially in fault-tolerance and ease of use. There is still plenty of work to be done in improving the seamless integration of all of the world's services and optimizing their utilization. 
+
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%%\appendices
+%%\section{Proof of the First Zonklar Equation}
+%%\blindtext
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+The author would like to thank his wife for her patience and support in fulfilling this study. 
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+%\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+%%\blindtext
+%%\end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+% that's all folks
+\end{document}
+
+
